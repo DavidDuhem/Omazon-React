@@ -1,4 +1,4 @@
-import searchIcon from "@resources/images/icons/search.svg";
+import searchIcon from "/images/icons/search.svg";
 
 function HeaderForm() {
     return (

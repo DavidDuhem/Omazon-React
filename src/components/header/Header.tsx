@@ -1,6 +1,6 @@
 import "@styles/header/header.scss";
-import logo from "@resources/images/logos/omazon-white.svg";
-import cartIcon from "@resources/images/icons/cart-white.svg";
+import logo from "/images/logos/omazon-white.svg";
+import cartIcon from "/images/icons/cart-white.svg";
 import HeaderForm from "./HeaderForm";
 import HeaderMenu from "./HeaderMenu";
 

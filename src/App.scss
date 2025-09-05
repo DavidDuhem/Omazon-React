@@ -1,0 +1,8 @@
+@use "@styles/vars" as *;
+
+body {
+    font-family: "Ember", sans-serif;
+    max-width: 1400px;
+    margin: auto;
+    background-color: $main-lower;
+}

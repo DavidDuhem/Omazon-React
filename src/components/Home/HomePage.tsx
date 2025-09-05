@@ -1,5 +1,46 @@
+import categories from "../../assets/data/categories.json";
+import tags from "../../assets/data/tags.json";
+import products from "../../assets/data/products.json";
+import Category from "./Category";
+import Product from "./Product";
+import "@styles/home/home.scss";
+import SectionList from "./SectionList";
+
 function HomePage() {
-    return <></>;
+    function getItemsFromTag(tagId: number) {
+        const items = products.filter((product) =>
+            typeof product.tag === "number"
+                ? product.tag === tagId
+                : product.tag.id === tagId
+        );
+
+        console.log(items);
+
+        return items;
+    }
+
+    return (
+        <>
+            <section className="home">
+                <SectionList
+                    title="Catégories à l'honneur"
+                    items={categories}
+                    getKey={(cat) => cat.id}
+                    renderItem={(cat) => <Category {...cat} />}
+                />
+
+                {tags.map((tag) => (
+                    <SectionList
+                        key={tag.id}
+                        title={tag.text}
+                        items={getItemsFromTag(tag.id)}
+                        getKey={(product) => product.id}
+                        renderItem={(product) => <Product {...product} />}
+                    />
+                ))}
+            </section>
+        </>
+    );
 }
 
 export default HomePage;

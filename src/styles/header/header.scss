@@ -113,7 +113,6 @@
             font-weight: bold;
             border: none;
             cursor: pointer;
-            width: max-content;
 
             &-icon {
                 width: 2.5rem;
@@ -122,10 +121,10 @@
 
             &-count {
                 position: absolute;
-                top: -0.5rem;
-                right: 4.05rem;
+                top: -0.3rem;
+                right: 4.15rem;
                 color: $brand-primary;
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 z-index: 1;
             }
 

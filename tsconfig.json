@@ -4,8 +4,11 @@
         "paths": {
             "@components/*": ["components/*"],
             "@styles/*": ["styles/*"],
-            "@resources/*": ["resources/*"]
-        }
+            "@resources/*": ["resources/*"],
+            "@types/*": ["types/*"]
+        },
+        "resolveJsonModule": true,
+        "esModuleInterop": true
     },
     "files": [],
     "references": [
