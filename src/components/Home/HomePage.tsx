@@ -6,7 +6,11 @@ import Product from "./Product";
 import "@styles/home/home.scss";
 import SectionList from "./SectionList";
 
-function HomePage() {
+type HomePageProps = {
+    addProductToCartCallback: (productId: number) => void;
+};
+
+function HomePage({ addProductToCartCallback }: HomePageProps) {
     function getItemsFromTag(tagId: number) {
         const items = products.filter((product) =>
             typeof product.tag === "number"
@@ -35,7 +39,14 @@ function HomePage() {
                         title={tag.text}
                         items={getItemsFromTag(tag.id)}
                         getKey={(product) => product.id}
-                        renderItem={(product) => <Product {...product} />}
+                        renderItem={(product) => (
+                            <Product
+                                {...product}
+                                addProductToCartCallback={
+                                    addProductToCartCallback
+                                }
+                            />
+                        )}
                     />
                 ))}
             </section>

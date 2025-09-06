@@ -37,7 +37,6 @@
             border-radius: 5px 0 0 5px;
             background-color: $main-lower;
             color: $brand-grey;
-            cursor: pointer;
         }
 
         &-searchBtn {
@@ -49,7 +48,6 @@
             padding: 0;
             box-sizing: border-box;
             background-color: $brand-primary;
-            cursor: pointer;
         }
     }
 
@@ -64,7 +62,6 @@
             background-color: $button-transparency-invisible;
             border: none;
             color: white;
-            cursor: pointer;
 
             &-greet {
                 font-size: 0.7rem;
@@ -112,7 +109,6 @@
             background-color: $button-transparency-invisible;
             font-weight: bold;
             border: none;
-            cursor: pointer;
 
             &-icon {
                 width: 2.5rem;

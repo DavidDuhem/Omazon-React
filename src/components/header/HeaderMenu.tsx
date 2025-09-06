@@ -1,6 +1,11 @@
 import { useState, useRef } from "react";
+import cartIcon from "/images/icons/cart-white.svg";
 
-function HeaderMenu() {
+type HeaderMenuProps = {
+    cartProductsProps: number[];
+};
+
+function HeaderMenu({ cartProductsProps }: HeaderMenuProps) {
     const [isOpen, setIsOpen] = useState(false);
     const timeoutRef = useRef<number | undefined>(undefined);
 
@@ -58,6 +63,19 @@ function HeaderMenu() {
                         </div>
                     </div>
                 )}
+            </div>
+            <div className="header-cart">
+                <button className="header-cart-btn">
+                    <img
+                        className="header-cart-btn-icon"
+                        src={cartIcon}
+                        alt="Cart icon"
+                    />
+                    <span className="header-cart-btn-count">
+                        {cartProductsProps.length}
+                    </span>
+                    <span className="header-cart-btn-text">Panier</span>
+                </button>
             </div>
         </>
     );

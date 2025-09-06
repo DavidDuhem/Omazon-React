@@ -1,5 +1,9 @@
 import type { Product as ProductType } from "../../types/types";
 
+type ProductProps = ProductType & {
+    addProductToCartCallback: (productId: number) => void;
+};
+
 function formatPrice(price: number) {
     const [integer, decimal] = price.toFixed(2).split(".");
 
@@ -23,26 +27,37 @@ function truncateTitle(title: string) {
     return title.slice(0, maxChars) + "…";
 }
 
-function Product(props: ProductType) {
+function Product({
+    id,
+    image,
+    title,
+    price,
+    addProductToCartCallback,
+}: ProductProps) {
     return (
         <>
             <div className="product-item">
-                <div className="product-item-illustration">
-                    <img
-                        className="product-item-illustration-img"
-                        src={`/images/products/${props.image}`}
-                        alt="product"
-                    />
-                </div>
+                <a href="">
+                    <div className="product-item-illustration">
+                        <img
+                            className="product-item-illustration-img"
+                            src={`/images/products/${image}`}
+                            alt="product"
+                        />
+                    </div>
+                </a>
                 <div className="product-item-details">
                     <h3 className="product-item-details-title">
-                        <a href="">{truncateTitle(props.title)}</a>
+                        <a href="">{truncateTitle(title)}</a>
                     </h3>
                     <div className="product-item-details-buy">
                         <h4 className="product-item-details-buy-price">
-                            {formatPrice(props.price)}
+                            {formatPrice(price)}
                         </h4>
-                        <button className="product-item-details-buy-cartBtn">
+                        <button
+                            className="product-item-details-buy-cartBtn"
+                            onClick={() => addProductToCartCallback(id)}
+                        >
                             Ajouter au panier
                         </button>
                     </div>
