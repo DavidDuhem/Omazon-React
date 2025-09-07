@@ -1,7 +1,10 @@
 import "@styles/footer/footer.scss";
 import logo from "/images/logos/omazon-white.svg";
+import { useModal } from "../modal/ModalContext";
 
 function Footer() {
+    const { open } = useModal();
+
     return (
         <>
             <footer className="footer">
@@ -21,7 +24,7 @@ function Footer() {
                             aujourd'hui !
                         </p>
                     </div>
-                    <button className="footer-seller-btn">
+                    <button onClick={open} className="footer-seller-btn">
                         Devenez vendeur sur Omazon
                     </button>
                 </div>
