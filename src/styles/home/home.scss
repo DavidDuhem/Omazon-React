@@ -73,7 +73,7 @@
         flex-direction: column;
         border: 1px solid $main-lower;
         width: 25rem;
-        height: 40rem;
+        height: 37rem;
 
         &-illustration {
             display: flex;
@@ -133,10 +133,20 @@
 
                 &-cartBtn {
                     background-color: $button-primary-default-background;
-                    border: none;
+                    border: 1px solid $button-primary-default-border;
                     border-radius: 15px;
                     width: 35%;
                     height: 2rem;
+                }
+
+                &-cartBtn:hover {
+                    background-color: $button-primary-hover-background;
+                    border: 1px solid $button-primary-hover-border;
+                }
+
+                &-cartBtn:active {
+                    background-color: $button-primary-active-background;
+                    border: 1px solid $button-primary-active-border;
                 }
             }
         }

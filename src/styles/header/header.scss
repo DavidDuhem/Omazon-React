@@ -1,6 +1,8 @@
 @use "@styles/vars" as *;
 
 .header {
+    position: sticky;
+    top: 0;
     background-color: $main-higher;
     display: flex;
     justify-content: space-between;
@@ -117,8 +119,9 @@
 
             &-count {
                 position: absolute;
-                top: -0.3rem;
-                right: 4.15rem;
+                top: 15%;
+                left: 28%;
+                transform: translate(-50%, -50%);
                 color: $brand-primary;
                 font-size: 1.2rem;
                 z-index: 1;

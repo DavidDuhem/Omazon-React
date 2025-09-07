@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.scss";
 import Header from "./components/header/Header";
 import HomePage from "./components/home/HomePage";
+import Footer from "./components/footer/Footer";
 
 function App() {
     const [cartProducts, setCartProducts] = useState<number[]>([]);
@@ -14,6 +15,7 @@ function App() {
                     setCartProducts((cart) => [...cart, productId])
                 }
             />
+            <Footer />
         </>
     );
 }
