@@ -12,7 +12,7 @@ function Modal() {
         <section className="modal">
             <div className="modal-header">
                 <h2 className="modal-header-title">Ajouter un produit</h2>
-                <button className="modal-header-closeBtn">
+                <button onClick={close} className="modal-header-closeBtn">
                     <img
                         className="modal-header-closeBtn-img"
                         src={closeIcon}
