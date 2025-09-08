@@ -6,6 +6,8 @@ import "@styles/modal/modal.scss";
 type ModalContent = {
     title?: string;
     body: ReactNode;
+    submitText?: string;
+    onSubmit?: (formData: FormData) => void;
 };
 
 type ModalContextType = {
@@ -65,7 +67,38 @@ export function ModalProvider({ children }: { children: ReactNode }) {
                                 />
                             </button>
                         </div>
-                        <div className="modal-content">{content.body}</div>
+                        <div className="modal-content">
+                            {content.onSubmit ? (
+                                <form
+                                    className="modal-content-form"
+                                    onSubmit={(e) => {
+                                        e.preventDefault();
+                                        const form = e.currentTarget;
+
+                                        if (form.checkValidity()) {
+                                            const formData = new FormData(
+                                                e.currentTarget
+                                            );
+                                            content.onSubmit!(formData);
+                                            close();
+                                        } else {
+                                            form.reportValidity();
+                                        }
+                                    }}
+                                >
+                                    {content.body}
+
+                                    <button
+                                        type="submit"
+                                        className="modal-content-form-submit"
+                                    >
+                                        {content.submitText ?? "Fermer"}
+                                    </button>
+                                </form>
+                            ) : (
+                                content.body
+                            )}
+                        </div>
                     </section>
                 </>
             )}

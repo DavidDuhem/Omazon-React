@@ -17,7 +17,7 @@ function HomePage({ addProductToCartCallback, products }: HomePageProps) {
         const items = products.filter((product) =>
             typeof product.tag === "number"
                 ? product.tag === tagId
-                : product.tag.id === tagId
+                : product.tag?.id === tagId
         );
 
         return items;

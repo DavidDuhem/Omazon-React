@@ -3,7 +3,11 @@ import logo from "/images/logos/omazon-white.svg";
 import { useModal } from "../modal/ModalContext";
 import ProductAddForm from "../modal/ProductAddForm";
 
-function Footer() {
+type FooterProps = {
+    addProductCallback: (productData: FormData) => void;
+};
+
+function Footer({ addProductCallback }: FooterProps) {
     const { open } = useModal();
 
     return (
@@ -30,6 +34,10 @@ function Footer() {
                             open({
                                 title: ProductAddForm.title,
                                 body: <ProductAddForm />,
+                                submitText: ProductAddForm.submitText,
+                                onSubmit: (formData) => {
+                                    addProductCallback(formData);
+                                },
                             })
                         }
                         className="footer-seller-btn"

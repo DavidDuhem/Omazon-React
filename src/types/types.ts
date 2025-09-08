@@ -16,6 +16,6 @@ export type Product = {
     title: string;
     price: number;
     image: string;
-    category: Category;
+    category: Category | null;
     tag: Tag | number;
 };
