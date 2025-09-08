@@ -1,6 +1,7 @@
+import type { Product as ProductType } from "../../types/types";
+
 import categories from "../../assets/data/categories.json";
 import tags from "../../assets/data/tags.json";
-import products from "../../assets/data/products.json";
 import Category from "./Category";
 import Product from "./Product";
 import "@styles/home/home.scss";
@@ -8,17 +9,16 @@ import SectionList from "./SectionList";
 
 type HomePageProps = {
     addProductToCartCallback: (productId: number) => void;
+    products: ProductType[];
 };
 
-function HomePage({ addProductToCartCallback }: HomePageProps) {
+function HomePage({ addProductToCartCallback, products }: HomePageProps) {
     function getItemsFromTag(tagId: number) {
         const items = products.filter((product) =>
             typeof product.tag === "number"
                 ? product.tag === tagId
                 : product.tag.id === tagId
         );
-
-        console.log(items);
 
         return items;
     }

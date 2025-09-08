@@ -1,6 +1,7 @@
 import "@styles/footer/footer.scss";
 import logo from "/images/logos/omazon-white.svg";
 import { useModal } from "../modal/ModalContext";
+import ProductAddForm from "../modal/ProductAddForm";
 
 function Footer() {
     const { open } = useModal();
@@ -24,7 +25,15 @@ function Footer() {
                             aujourd'hui !
                         </p>
                     </div>
-                    <button onClick={open} className="footer-seller-btn">
+                    <button
+                        onClick={() =>
+                            open({
+                                title: ProductAddForm.title,
+                                body: <ProductAddForm />,
+                            })
+                        }
+                        className="footer-seller-btn"
+                    >
                         Devenez vendeur sur Omazon
                     </button>
                 </div>
