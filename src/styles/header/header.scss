@@ -1,0 +1,152 @@
+@use "@styles/vars" as *;
+
+.header {
+    position: sticky;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    min-width: 1200px;
+    top: 0;
+    background-color: $main-higher;
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+
+    &-logo {
+        width: 6rem;
+        color: white;
+    }
+
+    &-form {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+
+        &-categories,
+        &-search,
+        &-searchBtn {
+            height: 2.3rem;
+            padding: 0 0.5rem;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        &-search {
+            flex: 1;
+        }
+
+        &-categories {
+            display: flex;
+            align-items: center;
+            border-radius: 5px 0 0 5px;
+            background-color: $main-lower;
+            color: $brand-grey;
+        }
+
+        &-searchBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            border-radius: 0 5px 5px 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: $button-primary-default-background;
+            border: 1px solid $button-primary-default-border;
+        }
+
+        &-searchBtn:hover {
+            background-color: $button-primary-hover-background;
+            border: 1px solid $button-primary-hover-border;
+        }
+
+        &-searchBtn:active {
+            background-color: $button-primary-active-background;
+            border: 1px solid $button-primary-active-border;
+        }
+    }
+
+    &-menu {
+        position: relative;
+        width: 15rem;
+
+        &-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            background-color: $transparency-invisible;
+            border: none;
+            color: white;
+
+            &-greet {
+                font-size: 0.7rem;
+                color: $main-low;
+            }
+
+            &-accountList {
+                font-size: 0.9rem;
+                font-weight: bold;
+            }
+        }
+
+        &-open {
+            display: flex;
+            gap: 8rem;
+            position: absolute;
+            top: 120%;
+            left: -22rem;
+            width: 35rem;
+            height: 40rem;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            z-index: 10;
+
+            &-column {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0 1rem;
+                &-right {
+                    border-left: 1px solid $main-low;
+                }
+            }
+        }
+    }
+
+    &-cart {
+        &-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background-color: $transparency-invisible;
+            font-weight: bold;
+            border: none;
+
+            &-icon {
+                width: 2.5rem;
+                flex-shrink: 0;
+            }
+
+            &-count {
+                position: absolute;
+                top: 15%;
+                left: 28%;
+                transform: translate(-50%, -50%);
+                color: $brand-primary;
+                font-size: 1.2rem;
+                z-index: 1;
+            }
+
+            &-text {
+                margin-left: -0.3rem;
+                margin-top: 0.95rem;
+                color: white;
+                font-size: 1rem;
+            }
+        }
+    }
+}

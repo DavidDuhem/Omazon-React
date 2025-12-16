@@ -1,0 +1,18 @@
+@use "@styles/vars" as *;
+
+body {
+    font-family: "Ember", sans-serif;
+    margin: auto;
+    background-color: $main-lower;
+}
+
+a,
+button,
+select,
+option {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,99 @@
+@use "@styles/vars" as *;
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &-goup {
+        display: flex;
+        justify-content: center;
+        background-color: $main-medium;
+        padding: 1rem;
+
+        &-btn {
+            background-color: $main-medium;
+            border: none;
+            color: $main-lowest;
+        }
+    }
+
+    &-seller {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        background-color: $main-high;
+        color: $main-lowest;
+        padding: 3.5rem;
+
+        &-title {
+            font-weight: bold;
+            font-size: 1.7rem;
+        }
+
+        &-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        &-btn {
+            background-color: $button-primary-default-background;
+            border: 1px solid $button-primary-default-border;
+            padding: 0.6rem 1rem;
+            border-radius: 10px;
+        }
+
+        &-btn:hover {
+            background-color: $button-primary-hover-background;
+            border: 1px solid $button-primary-hover-border;
+        }
+
+        &-btn:active {
+            background-color: $button-primary-active-background;
+            border: 1px solid $button-primary-active-border;
+        }
+    }
+
+    &-logo {
+        display: flex;
+        justify-content: center;
+        background-color: $main-high;
+        padding: 1.5rem;
+        box-shadow: 0 -0.15px 0 0 $main-lowest;
+
+        &-img {
+            width: 6rem;
+        }
+    }
+
+    &-legals {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        background-color: $main-higher;
+        color: $main-lowest;
+
+        &-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            &-item > a {
+                color: $main-low;
+                font-size: 0.8rem;
+            }
+        }
+
+        &-text {
+            color: $main-low;
+            font-size: 0.7rem;
+        }
+    }
+}
